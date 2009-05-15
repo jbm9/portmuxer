@@ -1,0 +1,49 @@
+portmuxer
+
+Copyright (C) 2002, Josh Myer <josh@joshisanerd.com>
+Released under the GPL, see COPYING in this directory.
+
+A program to multiplex SSH and HTTP (and others, in time)
+over the same TCP listener Socket. Handy for poking holes through
+overly-restrictive firewalls.
+
+This code is currently in the developing stages, so keep that in
+mind. The basics of setting it up are the following:
+
+- open up pm.h in your favorite editor and set PORT_IN, SSH_HOST,
+  SSH_PORT, HTTP_HOST, and HTTP_PORT appropriately. Tweak other
+  variables as you see fit.
+
+- 'make' or 'make DEBUG=gabba' (don't use DEBUG unless you really mean
+  to be actively debugging... it slows things down a lot)
+
+- move other servers out of the way as appropriate (ie: if you're
+  going to be running portmuxer on port 80, you want to move your
+  apache/httpd over to port 81 or some such.
+
+- start up portmuxer. I would advise using a 
+
+	'while [ -f /tmp/keep_pm_going ]; do ./portmuxer; sleep 1; done &'
+
+   kind of setup for the time being -- like i said, this code is still
+   in development =)
+
+- see if things work. Keep in mind that you have to wait for a timeout
+  when you ssh in on the pm port, so there's going to be at least
+  TIME_OUT latency, but more like (TIME_OUT+TIME_INT) latency --
+  normally 45 seconds. If you've played with BUFSIZE_DEFAULT at all,
+  you might see some oddness. Tweaking the value is helpful to tune
+  performance (ie: bigger is better), but i'd advise not tuning it too
+  high--you start getting this weird latency at the end of HTTP
+  downloads. The difference between 4096 and 8192 was only 1MBps here,
+  though 8192 was actually saturating my 100baseT.
+
+
+Anyway, hopefully someone else finds this as handy and useful as I
+do. If you do, drop me a line, I'd like to hear about it. Patches are
+always welcome.
+
+Thanks go out to Eric and David for putting up with the crappy last
+version, to Randy for listening to me ramble about this for a few
+months, and to Crystal for dealing with my even-more odd schedule
+while slapping it together.

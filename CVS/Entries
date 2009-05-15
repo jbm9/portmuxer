@@ -1,0 +1,19 @@
+/.cvsignore/1.2/Fri Apr 26 06:32:13 2002//
+/conn.c/1.26/Fri Apr 26 08:32:34 2002//
+/conn.h/1.7/Fri Apr 26 06:20:38 2002//
+/http.h/1.1/Wed Apr 24 18:47:27 2002//
+/manage.c/1.7/Fri Apr 26 08:26:42 2002//
+/manage.h/1.2/Wed Apr 24 19:29:33 2002//
+/misc.c/1.10/Fri Apr 26 08:26:42 2002//
+/misc.h/1.1/Wed Apr 24 19:29:45 2002//
+/session.c/1.2/Thu Apr 25 07:29:46 2002//
+/session.h/1.2/Wed Apr 24 19:29:33 2002//
+/ssh.h/1.1/Wed Apr 24 18:47:28 2002//
+/Makefile/1.4/Fri Apr 26 05:19:35 2002//
+/COPYING/1.1/Fri Apr 26 05:20:42 2002//
+/README/1.2/Fri Apr 26 05:37:40 2002//
+/http.c/1.6/Fri Apr 26 05:34:48 2002//
+/ssh.c/1.4/Fri Apr 26 05:35:28 2002//
+/pm.h/1.6/Tue Apr 30 13:37:51 2002//
+/main.c/1.6/Fri Apr 26 14:18:46 2002//
+D

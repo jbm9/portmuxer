@@ -1,0 +1,86 @@
+
+conn.h,523
+#define _CONN_H_2,17
+#define CONN_TYPE_UNKNOWN 4,35
+#define CONN_TYPE_LISTEN 5,63
+#define CONN_TYPE_HTTP 6,90
+#define CONN_TYPE_SSH 7,115
+#define CONN_TYPE_TELNET 8,139
+#define CONN_TYPE_MANAGE 9,166
+#define CONN_FLAGS_NONBLOCKING 11,194
+#define CONN_FLAGS_ACCEPTING 12,227
+#define CONN_FLAGS_CONNECTING 13,258
+#define CONN_FLAGS_INUSE 14,290
+#define CONN_FLAGS_CLOSEIN 15,317
+#define CONN_FLAGS_CLOSEOUT 16,347
+#define CONN_FLAGS_GONE 17,378
+struct conn_t conn_t19,406
+struct connlist_t connlist_t35,751
+
+http.h,22
+#define _HTTP_H_2,17
+
+manage.h,24
+#define _MANAGE_H_2,19
+
+misc.h,22
+#define _MISC_H_2,17
+
+pm.h,340
+#define _PM_H_2,15
+#define PORT_IN 22,306
+#define SSH_HOST 23,325
+#define SSH_PORT 24,354
+#define HTTP_HOST 25,374
+#define HTTP_PORT 26,404
+#define BUFSIZE_DEFAULT 28,426
+#define IN 29,455
+#define OUT 30,468
+#define CHUNK_SIZE 31,482
+#define TIME_INT 33,504
+#define TIME_OUT 34,524
+#define swap_direction(swap_direction36,545
+
+session.h,64
+#define _SESSION_H_2,20
+struct pm_session_t pm_session_t4,41
+
+ssh.h,21
+#define _SSH_H_2,16
+
+conn.c,266
+struct conn_t *conn_add(3,17
+struct conn_t *conn_find_byfd(58,1304
+int conn_free(77,1654
+int do_prune(113,2303
+int do_accept(120,2456
+int do_connect(164,3384
+int do_recv(177,3650
+  i 211,4447
+int _do_send(260,5671
+struct connlist_t *connlist_init(310,7179
+
+http.c,40
+int do_http(5,19
+int make_http(11,141
+
+main.c,36
+int do_timer(3,17
+int main(28,565
+
+manage.c,81
+static const char *conntypes[4,18
+int do_manage(7,243
+int make_manage(76,2205
+
+misc.c,77
+int listenestablish(9,202
+int handle_event(84,1895
+int list_poll(125,2724
+
+session.c,40
+struct pm_session_t *session_init(3,17
+
+ssh.c,37
+int do_ssh(3,17
+int make_ssh(9,138
